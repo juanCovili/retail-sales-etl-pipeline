@@ -1,0 +1,118 @@
+{
+  "kpis": {
+    "total_revenue_clp": 84674692,
+    "total_units_sold": 67028,
+    "total_transactions": 2160,
+    "average_unit_price": 1271.0,
+    "top_products": [
+      {
+        "product_name": "Bebida Cola Zero 1.5L",
+        "category": "Gaseosas",
+        "units": 11501,
+        "revenue": 16560362
+      },
+      {
+        "product_name": "Bebida Cola Clásica 1.5L",
+        "category": "Gaseosas",
+        "units": 11440,
+        "revenue": 16475744
+      },
+      {
+        "product_name": "Bebida Limón Soda 1.5L",
+        "category": "Gaseosas",
+        "units": 11395,
+        "revenue": 15306362
+      }
+    ],
+    "regional_performance": [
+      {
+        "region": "Biobío",
+        "revenue": 48349802,
+        "units": 38336
+      },
+      {
+        "region": "Metropolitana",
+        "revenue": 18163434,
+        "units": 14328
+      },
+      {
+        "region": "Valparaíso",
+        "revenue": 18161456,
+        "units": 14364
+      }
+    ],
+    "promo_uplift_percentage": 35.7
+  },
+  "forecast_summary": {
+    "product_id": "PRD-01",
+    "projected_units_7d": 1078,
+    "peak_day": {
+      "date": "2026-10-31",
+      "day_name": "Sábado",
+      "predicted_units": 173,
+      "expected_temp_c": 25.0,
+      "is_promo": true
+    },
+    "model_metrics": {
+      "mae": 5.37,
+      "rmse": 7.02,
+      "r2": 0.846
+    },
+    "daily_breakdown": [
+      {
+        "date": "2026-10-30",
+        "day_name": "Viernes",
+        "predicted_units": 142,
+        "expected_temp_c": 24.5,
+        "is_promo": false
+      },
+      {
+        "date": "2026-10-31",
+        "day_name": "Sábado",
+        "predicted_units": 173,
+        "expected_temp_c": 25.0,
+        "is_promo": true
+      },
+      {
+        "date": "2026-11-01",
+        "day_name": "Domingo",
+        "predicted_units": 170,
+        "expected_temp_c": 25.5,
+        "is_promo": false
+      },
+      {
+        "date": "2026-11-02",
+        "day_name": "Lunes",
+        "predicted_units": 144,
+        "expected_temp_c": 26.0,
+        "is_promo": false
+      },
+      {
+        "date": "2026-11-03",
+        "day_name": "Martes",
+        "predicted_units": 145,
+        "expected_temp_c": 26.5,
+        "is_promo": false
+      },
+      {
+        "date": "2026-11-04",
+        "day_name": "Miércoles",
+        "predicted_units": 149,
+        "expected_temp_c": 27.0,
+        "is_promo": false
+      },
+      {
+        "date": "2026-11-05",
+        "day_name": "Jueves",
+        "predicted_units": 155,
+        "expected_temp_c": 27.5,
+        "is_promo": false
+      }
+    ]
+  },
+  "alerts": [
+    "ALERTA DE CAPACIDAD: Se proyecta un pico de 173 unidades el Sábado 2026-10-31 debido a temperaturas estimadas de 25.0°C.",
+    "IMPACTO PROMOCIONAL: Las campañas de descuento generan un incremento de demanda de +35.7%. Coordinar stock buffer en centros mayoristas."
+  ],
+  "markdown_brief": "# 📊 Resumen Ejecutivo de Demanda y Operaciones Retail\n\n**Fecha de Generación:** Automatizada por Pipeline ETL & ML  \n**Métrica Clave:** Proyección a 7 Días para SKU Líder (`PRD-01`)\n\n---\n\n### 1. Resumen de Desempeño Comercial\n- **Ingresos Totales Acumulados:** $84,674,692 CLP\n- **Volumen Total Distribuido:** 67,028 unidades en 2,160 transacciones.\n- **Efectividad Promocional:** Las promociones impulsan un **+35.7%** en volumen unitario promedio.\n- **Región con Mayor Tracción:** Biobío con $48,349,802 CLP.\n\n### 2. Proyección Predictiva (Modelo Ridge Regression - $R^2$: 0.846)\n- **Demanda Proyectada (Próximos 7 días):** **1,078 unidades**\n- **Día de Mayor Demanda:** Sábado 2026-10-31 (173 unidades).\n- **Margen de Error del Modelo:** MAE de ±5.37 unidades (RMSE: 7.02).\n\n### 3. Alertas y Recomendaciones para Logística\n- ⚠️ ALERTA DE CAPACIDAD: Se proyecta un pico de 173 unidades el Sábado 2026-10-31 debido a temperaturas estimadas de 25.0°C.\n- ⚠️ IMPACTO PROMOCIONAL: Las campañas de descuento generan un incremento de demanda de +35.7%. Coordinar stock buffer en centros mayoristas.\n"
+}

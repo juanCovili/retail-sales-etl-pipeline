@@ -1,0 +1,26 @@
+[
+  {
+    "store_id": "ST-001",
+    "name": "Centro Distribución Las Condes",
+    "region": "Metropolitana",
+    "format": "Supermercado"
+  },
+  {
+    "store_id": "ST-002",
+    "name": "Sucursal Concepción Centro",
+    "region": "Biobío",
+    "format": "Express"
+  },
+  {
+    "store_id": "ST-003",
+    "name": "Centro Logístico Los Ángeles",
+    "region": "Biobío",
+    "format": "Mayorista"
+  },
+  {
+    "store_id": "ST-004",
+    "name": "Punto Venta Valparaíso Puerto",
+    "region": "Valparaíso",
+    "format": "Hipermercado"
+  }
+]

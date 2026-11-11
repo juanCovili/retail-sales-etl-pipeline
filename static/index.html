@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retail Demand & Analytics Pipeline | Coca-Cola Embonor Showcase</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#fef2f2',
+              500: '#ef4444',
+              600: '#dc2626',
+              700: '#b91c1c'
+            },
+            slate: {
+              850: '#151d2e',
+              900: '#0f172a',
+              950: '#020617'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen antialiased flex flex-col">
+
+  <!-- Header -->
+  <header class="border-b border-slate-800 bg-slate-900/60 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-9 h-9 rounded-lg bg-red-600/20 border border-red-500/30 flex items-center justify-center text-red-500 font-bold">
+          <i data-lucide="activity" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <h1 class="text-sm font-semibold text-white tracking-wide">Retail Demand & Analytics Pipeline</h1>
+          <p class="text-xs text-slate-400">Data Engineering, Ridge ML & Automated Insights</p>
+        </div>
+      </div>
+      <div class="flex items-center space-x-3 text-xs">
+        <span class="inline-flex items-center px-2.5 py-1 rounded-full font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-1.5 animate-pulse"></span> Pipeline Activo
+        </span>
+        <a href="https://github.com/juanCovili/retail-sales-etl-pipeline" target="_blank" class="inline-flex items-center px-3 py-1.5 rounded-md bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">
+          <i data-lucide="github" class="w-4 h-4 mr-1.5"></i> Repositorio GitHub
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+    
+    <!-- Top KPIs -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="p-5 rounded-xl bg-slate-900/70 border border-slate-800/80 shadow-sm">
+        <div class="flex items-center justify-between text-slate-400 text-xs font-medium uppercase tracking-wider">
+          <span>Ingresos Totales (90d)</span>
+          <i data-lucide="dollar-sign" class="w-4 h-4 text-emerald-400"></i>
+        </div>
+        <div class="mt-2 flex items-baseline justify-between">
+          <div class="text-2xl font-bold text-white tracking-tight">$84.674.692</div>
+          <span class="text-xs text-emerald-400 font-semibold">+14.2%</span>
+        </div>
+        <p class="text-xs text-slate-500 mt-1">2.160 transacciones auditadas</p>
+      </div>
+
+      <div class="p-5 rounded-xl bg-slate-900/70 border border-slate-800/80 shadow-sm">
+        <div class="flex items-center justify-between text-slate-400 text-xs font-medium uppercase tracking-wider">
+          <span>Volumen Distribuido</span>
+          <i data-lucide="package" class="w-4 h-4 text-blue-400"></i>
+        </div>
+        <div class="mt-2 flex items-baseline justify-between">
+          <div class="text-2xl font-bold text-white tracking-tight">67.028 u.</div>
+          <span class="text-xs text-slate-400">4 Centros Distribución</span>
+        </div>
+        <p class="text-xs text-slate-500 mt-1">Gaseosas, Aguas e Isotónicas</p>
+      </div>
+
+      <div class="p-5 rounded-xl bg-slate-900/70 border border-slate-800/80 shadow-sm">
+        <div class="flex items-center justify-between text-slate-400 text-xs font-medium uppercase tracking-wider">
+          <span>Uplift Promocional</span>
+          <i data-lucide="trending-up" class="w-4 h-4 text-purple-400"></i>
+        </div>
+        <div class="mt-2 flex items-baseline justify-between">
+          <div class="text-2xl font-bold text-white tracking-tight">+35,7%</div>
+          <span class="text-xs text-purple-400 font-semibold">Alto Impacto</span>
+        </div>
+        <p class="text-xs text-slate-500 mt-1">Incremento unitario en campañas</p>
+      </div>
+
+      <div class="p-5 rounded-xl bg-slate-900/70 border border-slate-800/80 shadow-sm">
+        <div class="flex items-center justify-between text-slate-400 text-xs font-medium uppercase tracking-wider">
+          <span>Precisión Modelo ML (R²)</span>
+          <i data-lucide="cpu" class="w-4 h-4 text-amber-400"></i>
+        </div>
+        <div class="mt-2 flex items-baseline justify-between">
+          <div class="text-2xl font-bold text-white tracking-tight">84,6%</div>
+          <span class="text-xs text-amber-400 font-semibold">MAE ±5.37 u.</span>
+        </div>
+        <p class="text-xs text-slate-500 mt-1">Regresión Ridge con Lags & Clima</p>
+      </div>
+    </div>
+
+    <!-- Charts Row -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      
+      <!-- Forecast Chart (2 cols) -->
+      <div class="lg:col-span-2 p-6 rounded-xl bg-slate-900/70 border border-slate-800/80 shadow-sm flex flex-col justify-between">
+        <div class="flex items-center justify-between mb-4">
+          <div>
+            <h3 class="text-sm font-semibold text-white">Proyección de Demanda a 7 Días — SKU PRD-01 (Cola Clásica 1.5L)</h3>
+            <p class="text-xs text-slate-400">Correlación multivariable: Demanda Proyectada vs. Temperatura Ambiente Estimada</p>
+          </div>
+          <span class="text-xs px-2.5 py-1 rounded-md bg-red-950/60 text-red-400 border border-red-800/40">
+            Pico: 173 u. (Sábado)
+          </span>
+        </div>
+        <div class="h-64">
+          <canvas id="forecastChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Regional Distribution (1 col) -->
+      <div class="p-6 rounded-xl bg-slate-900/70 border border-slate-800/80 shadow-sm flex flex-col justify-between">
+        <div class="mb-4">
+          <h3 class="text-sm font-semibold text-white">Ingresos por Región de Distribución</h3>
+          <p class="text-xs text-slate-400">Consolidado comercial en Data Warehouse</p>
+        </div>
+        <div class="h-64">
+          <canvas id="regionalChart"></canvas>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Section: AI Alerts & SQL Queries -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      
+      <!-- Executive AI Briefing -->
+      <div class="p-6 rounded-xl bg-slate-900/70 border border-slate-800/80 shadow-sm space-y-4">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+          <div class="flex items-center space-x-2">
+            <i data-lucide="sparkles" class="w-4 h-4 text-amber-400"></i>
+            <h3 class="text-sm font-semibold text-white">Diagnóstico Ejecutivo de Operaciones (IA Insights)</h3>
+          </div>
+          <span class="text-xs text-slate-400">Generado automáticamente</span>
+        </div>
+
+        <div class="space-y-3">
+          <div class="p-3.5 rounded-lg bg-red-950/20 border border-red-500/20 text-xs text-red-200 flex items-start space-x-3">
+            <i data-lucide="alert-triangle" class="w-4 h-4 text-red-400 mt-0.5 shrink-0"></i>
+            <div>
+              <p class="font-semibold text-red-300">Alerta de Capacidad Logística — Fin de Semana</p>
+              <p class="mt-0.5 text-slate-300">Se proyecta un pico de 173 unidades el Sábado 31 de Octubre (+21% sobre el promedio semanal) debido a temperaturas estimadas de 25°C y activación de campaña de descuento.</p>
+            </div>
+          </div>
+
+          <div class="p-3.5 rounded-lg bg-blue-950/20 border border-blue-500/20 text-xs text-blue-200 flex items-start space-x-3">
+            <i data-lucide="check-circle-2" class="w-4 h-4 text-blue-400 mt-0.5 shrink-0"></i>
+            <div>
+              <p class="font-semibold text-blue-300">Recomendación para Centros de Distribución</p>
+              <p class="mt-0.5 text-slate-300">Reabastecer con 48h de anticipación el Centro Logístico Los Ángeles y CD Las Condes para mitigar riesgos de quiebre de stock en categorías Gaseosas y Aguas.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-2 text-xs text-slate-400">
+          <p><strong>Stack de Ingesta:</strong> Python 3, SQLite Normalizado (3FN), Regresión Ridge con Lags Temporales y Módulo de Alertas Automatizado.</p>
+        </div>
+      </div>
+
+      <!-- SQL Data Warehouse Top Products Table -->
+      <div class="p-6 rounded-xl bg-slate-900/70 border border-slate-800/80 shadow-sm space-y-4">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+          <div class="flex items-center space-x-2">
+            <i data-lucide="database" class="w-4 h-4 text-emerald-400"></i>
+            <h3 class="text-sm font-semibold text-white">Top SKUs por Facturación (Query SQL)</h3>
+          </div>
+          <span class="text-xs text-slate-400">dim_products ⨝ fact_sales</span>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs">
+            <thead>
+              <tr class="border-b border-slate-800 text-slate-400 font-medium">
+                <th class="py-2">Producto</th>
+                <th class="py-2">Categoría</th>
+                <th class="py-2 text-right">Unidades</th>
+                <th class="py-2 text-right">Venta Total</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800/60">
+              <tr>
+                <td class="py-2.5 font-medium text-white">Bebida Cola Clásica 1.5L</td>
+                <td class="py-2.5"><span class="px-2 py-0.5 rounded bg-red-950/60 text-red-300 border border-red-800/40">Gaseosas</span></td>
+                <td class="py-2.5 text-right font-mono text-slate-300">12.180</td>
+                <td class="py-2.5 text-right font-mono text-emerald-400 font-semibold">$17.731.420</td>
+              </tr>
+              <tr>
+                <td class="py-2.5 font-medium text-white">Bebida Cola Zero 1.5L</td>
+                <td class="py-2.5"><span class="px-2 py-0.5 rounded bg-red-950/60 text-red-300 border border-red-800/40">Gaseosas</span></td>
+                <td class="py-2.5 text-right font-mono text-slate-300">11.890</td>
+                <td class="py-2.5 text-right font-mono text-emerald-400 font-semibold">$17.310.850</td>
+              </tr>
+              <tr>
+                <td class="py-2.5 font-medium text-white">Bebida Limón Soda 1.5L</td>
+                <td class="py-2.5"><span class="px-2 py-0.5 rounded bg-amber-950/60 text-amber-300 border border-amber-800/40">Gaseosas</span></td>
+                <td class="py-2.5 text-right font-mono text-slate-300">11.450</td>
+                <td class="py-2.5 text-right font-mono text-emerald-400 font-semibold">$15.589.200</td>
+              </tr>
+              <tr>
+                <td class="py-2.5 font-medium text-white">Bebida Isotónica Citrus 500ml</td>
+                <td class="py-2.5"><span class="px-2 py-0.5 rounded bg-blue-950/60 text-blue-300 border border-blue-800/40">Isotónicas</span></td>
+                <td class="py-2.5 text-right font-mono text-slate-300">11.120</td>
+                <td class="py-2.5 text-right font-mono text-emerald-400 font-semibold">$13.992.400</td>
+              </tr>
+              <tr>
+                <td class="py-2.5 font-medium text-white">Agua Mineral Sin Gas 1.5L</td>
+                <td class="py-2.5"><span class="px-2 py-0.5 rounded bg-cyan-950/60 text-cyan-300 border border-cyan-800/40">Aguas</span></td>
+                <td class="py-2.5 text-right font-mono text-slate-300">10.820</td>
+                <td class="py-2.5 text-right font-mono text-emerald-400 font-semibold">$10.450.822</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800 bg-slate-950 py-6 text-center text-xs text-slate-500">
+    <p>Desarrollado por <strong>Juan Andrés Covili Cabezas</strong> · Ingeniero en Informática (INACAP) · <a href="https://juancovili.com" class="text-slate-400 hover:text-white underline">juancovili.com</a></p>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    // Chart 1: Forecast Chart
+    const ctxForecast = document.getElementById('forecastChart').getContext('2d');
+    new Chart(ctxForecast, {
+      type: 'line',
+      data: {
+        labels: ['Vie 30', 'Sáb 31 (Promo)', 'Dom 01', 'Lun 02', 'Mar 03', 'Mié 04', 'Jue 05'],
+        datasets: [
+          {
+            label: 'Demanda Proyectada (Unidades)',
+            data: [142, 173, 170, 144, 145, 149, 155],
+            borderColor: '#ef4444',
+            backgroundColor: 'rgba(239, 68, 68, 0.15)',
+            borderWidth: 2.5,
+            fill: true,
+            tension: 0.35,
+            yAxisID: 'y'
+          },
+          {
+            label: 'Temperatura Estimada (°C)',
+            data: [24.5, 25.0, 25.5, 26.0, 26.5, 27.0, 27.5],
+            borderColor: '#f59e0b',
+            borderDash: [4, 4],
+            borderWidth: 1.5,
+            fill: false,
+            tension: 0.2,
+            yAxisID: 'y1'
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { labels: { color: '#94a3b8', font: { size: 11 } } }
+        },
+        scales: {
+          x: { grid: { color: '#1e293b' }, ticks: { color: '#94a3b8' } },
+          y: {
+            position: 'left',
+            grid: { color: '#1e293b' },
+            ticks: { color: '#ef4444' },
+            title: { display: true, text: 'Unidades', color: '#ef4444' }
+          },
+          y1: {
+            position: 'right',
+            grid: { drawOnChartArea: false },
+            ticks: { color: '#f59e0b' },
+            title: { display: true, text: '°C', color: '#f59e0b' }
+          }
+        }
+      }
+    });
+
+    // Chart 2: Regional Chart
+    const ctxRegional = document.getElementById('regionalChart').getContext('2d');
+    new Chart(ctxRegional, {
+      type: 'doughnut',
+      data: {
+        labels: ['Biobío ($48,3M)', 'Metropolitana ($21,1M)', 'Valparaíso ($15,2M)'],
+        datasets: [{
+          data: [48.3, 21.1, 15.2],
+          backgroundColor: ['#ef4444', '#3b82f6', '#10b981'],
+          borderWidth: 0
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'bottom', labels: { color: '#94a3b8', font: { size: 11 } } }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
