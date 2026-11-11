@@ -113,6 +113,30 @@ retail-sales-etl-pipeline/
 
 ---
 
+
+---
+
+## 🔄 Equivalencia y Mapeo en Pentaho Data Integration (PDI / Kettle)
+
+Para entornos empresariales basados en herramientas ETL visuales como **Pentaho Data Integration (PDI)** o **SQL Server Integration Services (SSIS)**, la lógica modular de este pipeline se mapea de forma directa 1:1 en una transformación `.ktr`:
+
+```mermaid
+flowchart LR
+    A["CSV file input\n(sales_data.csv)"] --> C["Select values\n(Tipado y Nulos)"]
+    B["JSON input\n(stores.json)"] --> D["Stream lookup\n(dim_stores FK)"]
+    C --> D
+    D --> E["Filter rows\n(units >= 0)"]
+    E --> F[("Table output\nfact_sales")]
+    F --> G["Group by / Aggregate\n(Métricas Diarias)"]
+    G --> H[("Table output\nagg_daily_demand")]
+```
+
+- **Extract:** Steps `CSV file input` y `JSON input` para ingesta paralela de fuentes transaccionales y maestras.
+- **Transform:** Steps de `Select values` (conversión explícita de tipos de datos), `Filter rows` (eliminación de inconsistencias) y `Stream lookup` (validación de integridad referencial contra dimensiones).
+- **Load:** Step `Table output` con inserción por lotes (batch commit) en bases de datos relacionales (PostgreSQL / SQL Server).
+
+---
+
 ## 🚀 Guía de Inicio Rápido
 
 ### Opción A: Ejecución Local en 1 Minuto (Sin dependencias externas)
