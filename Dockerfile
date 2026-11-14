@@ -1,11 +1,19 @@
+# @project   Retail Sales & Demand Analytics Pipeline
+# @author    Juan Covili <https://github.com/juanCovili>
+# @repo      https://github.com/juanCovili/retail-sales-etl-pipeline
+# @portfolio https://juancovili.com
+# @copyright Copyright (c) 2026 Juan Covili. Todos los derechos reservados.
 # Base image ligera de Python
 FROM python:3.11-slim
 
 WORKDIR /app
 
 # Metadatos del autor
-LABEL maintainer="Juan Andrés Covili Cabezas <juancovili@icloud.com>"
+LABEL maintainer="Juan Covili <https://github.com/juanCovili>"
 LABEL description="Retail Sales & Demand Analytics Pipeline (ETL, SQL, ML, AI Insights)"
+LABEL org.opencontainers.image.authors="Juan Covili <https://github.com/juanCovili>"
+LABEL org.opencontainers.image.url="https://juancovili.com"
+LABEL org.opencontainers.image.source="https://github.com/juanCovili/retail-sales-etl-pipeline"
 
 # Copiar archivos de requerimientos y código
 COPY requirements.txt .

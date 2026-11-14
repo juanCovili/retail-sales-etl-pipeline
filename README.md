@@ -188,8 +188,17 @@ OK
 
 ## 👨‍💻 Autor
 
-**Juan Andrés Covili Cabezas**  
+**Juan Covili**  
 *Ingeniero en Informática y Analista Programador (INACAP)*  
 *Promedio 6.0 · Top 8 de Generación*  
 🌐 Portafolio: [juancovili.com](https://juancovili.com)  
 💼 LinkedIn: [linkedin.com/in/juan-covili-02b2a114b](https://www.linkedin.com/in/juan-covili-02b2a114b)
+
+---
+
+## Autor y Copyright
+
+**Juan Covili** — Copyright (c) 2026 Juan Covili  
+- **GitHub:** [github.com/juanCovili/retail-sales-etl-pipeline](https://github.com/juanCovili/retail-sales-etl-pipeline)  
+- **Portafolio:** [juancovili.com](https://juancovili.com)  
+- **Licencia:** Ver [`LICENSE`](./LICENSE) (disponible para evaluación técnica y revisión de portafolio con atribución obligatoria a Juan Covili; prohibido eliminar marcas de autoría o reclamar autoría).
